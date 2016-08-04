@@ -1,0 +1,52 @@
+﻿<Window x:Class="Scobble.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scobble"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="545" Width="530">
+    <Grid>
+        <StackPanel>
+            <TextBlock FontSize="26" Margin="10">Scrobble</TextBlock>
+            <TextBlock TextWrapping="Wrap" Margin="10,0">Seja bem vindo ao Scrobble, nós fazemos track das suas atividades para que você possa acompanhar todas as coisas que você viu, leu, jogou, ou está interessado. Além disso nós usamos seu historico para sugerir novos itens.</TextBlock>
+            <TextBlock TextWrapping="Wrap" Margin="10,0">Esse aplicativo apenas acompanha as atividades do seu computador, para importar a atividade de outros sites, como filmow, skoob e goodreads, por favor acessar o site do Scrobble.</TextBlock>
+            <TextBlock TextWrapping="Wrap" Margin="10">Nós garantimos que apenas coletamos informações de serviços importante para nós e todos eles estão listados abaixo, onde você pode cancelar a qualquer momento o monitoramento das atividades.</TextBlock>
+
+            <TextBlock FontSize="26" Margin="10">Serviços</TextBlock>
+            <TabControl Margin="10,0">
+                <TabItem Header="Filmes, Séries e Animes">
+                    <ListBox>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">Netflix</TextBlock>
+                                <TextBlock>Assistindo? <TextBlock Name="netflix" /></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold">VLC Player</TextBlock>
+                                <TextBlock>Assistindo? <TextBlock Name="vlc" /></TextBlock>
+                            </StackPanel>
+                        </ListBoxItem>
+                    </ListBox>
+                </TabItem>
+                <TabItem Header="Arquivos locais">
+                    <StackPanel>
+                        <TextBlock Margin="10">Adicione pastas que contém filmes, livros, músicas, jogos, animes e mangás.</TextBlock>
+                        <Button Margin="10,0" Click="Button_Click">Adicionar Pasta</Button>
+                        <ListBox Height="100" Margin="10" Name="folders">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Label Content="{Binding Path=.}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+
+            <TextBlock TextWrapping="Wrap" Margin="10">Gostaria que nós acompanhasse algum outro aplicativo ou serviço? Avise-nos!</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
